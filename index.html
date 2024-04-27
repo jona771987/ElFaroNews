@@ -16,7 +16,7 @@ function updateClock() {
     const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     document.getElementById("clock").textContent = formattedTime;
 }
-
+    
 setInterval(updateClock, 1000);
 updateClock();
 document.getElementById("info").innerHTML="HolaMundo";
