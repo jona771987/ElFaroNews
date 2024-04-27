@@ -1,1 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mi Periódico Nacional</title>
+<script>
+    // Reloj en Tiempo Real (script.js)
+function updateClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const formattedTime = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+    document.getElementById("clock").textContent = formattedTime;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+document.getElementById("info").innerHTML="HolaMundo";
+</script>
+<style>
+    /* Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+nav{
+    background-color: rgb(11, 97, 97);
+    width: 100%;
+    height: 80px;
+
+}
+
+.brand{
+    margin-left: 5%;
+    line-height: 80px;
+}
+
+.brand a{
+    color: white;
+    font-size: 30px;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+header, main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(233, 43, 43, 0.1);
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #b9d41c;
+    color: #02182c;
+}
+#desplegable {
+            margin: auto;
+            width: O;
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20pxs;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        .nav > li {
+            float: left;
+        }
+        .nav li a {
+            background-color: #213864;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 12px;
+            display: block;
+        }
+        .nav li a:hover {
+            background-color: #070000;
+        }
+        .nav li ul {
+            display: none;
+            position: absolute;s
+            min-width: 140px;
+        }
+        .nav li:hover > ul {
+            display: block;
+        }
+        .nav li ul li {
+            position: relative;
+        }
+        .nav li ul li ul {
+            right: -140px;
+            top: 0;
+        }
+
+
+.brand img{
+    width: 125px;
+    height: 125px;
+}
+
+h1 {
+    font-size: 72px;
+    text-align: center;
+    background: linear-gradient(90deg, #02182c, #b9d41c);
+    -webkit-background-clip: text;
+    color: transparent;
+    /* desplazamiento (movimiento al título) */
+    animation: desplazamiento 3s infinite alternate;
+    }
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    animation: aparecerDesdeFondo 2s infinite;
+}
+@keyframes aparecerDesdeFondo{
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h3{
+    background-color: #1b1541;
+    color: rgb(241, 247, 245);
+    max-width: 80%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+h4{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+h5{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+
+article {
+    margin-bottom: 20px;
+}
+
+/* Estilos para imágenes y videos */
+img, video {
+    max-width: 80%;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    font-size: 28px;
+    max-width: 100%;
+    height: 80%;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Estilos para el reloj */
+#clock {
+    font-size: 24px;
+    text-align: right; /* Alinea el reloj a la derecha */
+    position: relative; /* Posición dentro de los márgenes */
+    top: 0; /* Coloca el reloj en la parte superior */
+    right: 0; /* Coloca el reloj en la esquina derecha */
+    margin-top: 20px;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="clock"></div>
+        
+        <nav>
+            <div style="display: flex; justify-content: space-between;">
+            <label for="" class="brand">
+                <a href=""><img src="https://th.bing.com/th/id/OIG4.McCj6087G1XrmHV6J0qj?w=1024&h=1024&rs=1&pid=ImgDetMain" alt=""></a>
+            </label>
+            <div id="desplegable">
+                <ul class="nav">
+                    <li><a href="#seccion1">Inicio</a>
+                        <ul>
+                            <li><a href="#seccion1">Nacional</a></li>
+                            <li><a href="#seccion1">Internacional</a></li>
+                            <li><a href="#seccion1">Novedades</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#seccion2">Deportes</a>
+                        <ul>
+                            <li><a href="#seccion2">Futbol Nacional</a></li>
+                            <li><a href="#seccion2">Futbol Internacional</a></li>
+                            <li><a href="#seccion2">Formula 1</a></li>
+                            <li><a href="#seccion2">Juegos</a>
+                                <ul>
+                                    <li><a href="#seccion2">Entretención</a></li>
+                                    <li><a href="#seccion2">Ingenio</a></li>
+                                    <li><a href="#seccion2">Apuestas</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#seccion3">Negocios</a>
+                        <ul>
+                            <li><a href="#seccion3">empresarial</a></li>
+                            <li><a href="#seccion3">Emprendimiento</a></li>
+                            <li><a href="#seccion3">Capital Semilla</a></li>
+                            <li><a href="#seccion3">Nuevas Tendencia</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Acerca de</a>
+                        <ul>
+                            <li><a href="#">Iniciar Sesión</a></li>
+                            <li><a href="#">Conocenos</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Trabaja con Nosotros</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Eventos</a>
+                        <ul>
+                            <li><a href="#">Cultura</a></li>
+                            <li><a href="#">Espectacular</a></li>
+                            <li><a href="#">Cine</a></li>
+                            <li><a href="#">Vacaciones en Familia</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br></br>
+        <h1>EL FARO NEWS</h1>
+        <h2>Noticias que importan</h2>
+    </header>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-2">
+                </div>
+            </div>
+        </div>
+        <br></br>
+    <main>
+        <section id="seccion1"></section>
+        <div style="display: flex; justify-content: space-between;">    
+            <div>
+                <h3>Inicio</h3>
+                <br></br>
+                <article>
+                    <h4>Bombero secuestrado en falso atropello</h4>
+                    <p><h5>Según cuenta la victima, el día de ayer en la comuna de Buin, el bombero habría sido retenido con armas de fuego con el fin de quedarse con la recaudación del día, tras una colecta nacional por parte de la institución. Según el testimonio de Iván Zamora: "Les dije que no tenía nada de valor, que yo no les servía"</h5></p>
+                    <img src="https://www.lacuarta.com/resizer/UlYdsi5I9EOSAcy-lGVqUyDYdhY=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/AMIPKI2LLVHHJL4VB6KU4XJVQI.jpg" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.lacuarta.com/chile/noticia/me-llevaron-debajo-de-un-puente-me-pegaron-hablo-bombero-que-fue-secuestrado-tras-acudir-a-un-falso-llamado-de-emergencia/HKAFRGXTRVGU7KTOS4UZG3STQ4/">este enlace</a>.</p>
+                </article>
+            </div>
+            <div>
+                <article>
+                    <h4>Conflicto en Gaza</h4>
+                    <p><h5>Trás los constantes ataques entre el grupo terrorista Hamás e Israel y la reciente participación de Irán contra este último, se ha vuelto a hacer mención al historico conflicto entre palestinos e israelíes por tierra santa. Esta tragedia, lejos de terminar, ha dejado a más de 34.000 muertos en Gaza desde el 7 de octubre, según el Ministerio de Salud Palestino.</h5></p>
+                    <img src="https://th.bing.com/th/id/R.69a9785cd40a902db449696b6b269fe5?rik=sLgQusZl6MyTeQ&riu=http%3a%2f%2fcl.buscafs.com%2fwww.sandiegored.com%2fpublic%2fuploads%2fimages%2f90401.jpg&ehk=IzhOsV4yZstsEQDXzMMAZ6Jd7l2AieLyqamxnDfWzhI%3d&risl=&pid=ImgRaw&r=0" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://cnnespanol.cnn.com/2024/04/21/ultima-hora-ataque-israel-iran-hamas-gaza-en-vivo-noticias-reacciones-orix-3/">este enlace</a>.</p>
+                </article>
+            </div>
+            <div>
+                <article>
+                    <h4>Lluvia de estrellas de las Líridas</h4>
+                    <p><h5>ContenidoLa lluvia de meteoritos Líridas será más activa desde este domingo por la noche hasta las primeras horas de la mañana de este lunes, según la Sociedad Estadounidense de Meteoros. Y la luna llena de abril, también conocida como luna rosa, alcanza la cima de su fase llena a las 7:49 p.m. de este martes.</h5></p>
+                    <img src="https://www.radioactiva.cl/wp-content/uploads/2021/04/9fc95e20453bf1e1f74c10b59e16e184-2-1024x640.jpg" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://twitter.com/i/status/1252776892744097794">este enlace</a>.</p>
+                    </video>
+                </article>
+            </div>
+        </div>
+        </section>
+        <br></br>
+        <img src="https://adclick.g.doubleclick.net/aclk?sa=l&ai=Ct3PnP9grZov8N5W-6tkP6dq1wAOPr4WDd5Og5ZfLEu3mnYqBMBABINvZwpkBYJnxz4GEBaAB2PGK1ALIAQmoAwHIA8sEqgSKAk_QxD4f1LiJpBxIus3f5HeMYRSH8NG3g90jVYPtc2GYg63TVnnM5U9EfA0NDxjdnx4trcupWPwO0k-jxDD_B4Q_UdzGcNSjyVNFJ7qEfK2_HUZmciwbM1M6dSUOBDjuvtdNPrwnXxnesgZrY718-da8r1cg7HM2w5y1vSchaoR0c_TPPnfU4LXhRW7xp_xvZ4Y8bSVQaL11E9rqht_lTERNxick55fTRXfsJUpV6zQrUIVEtxesXrv9nBe_JN15SuSzKZEmBQWmlaFV0atNkOzTdDrW_Hmu-p0vxLOAYSkXEBBuH-Gbvpy19WMYaFeKjLUnQga8zyIJ6rYVD687jnQZ3WAlZJ2lTFGOwASi6qWT4wSIBeLQyvVOoAYugAeoo9-_AqgH2baxAqgH1ckbqAemvhuoB47OG6gHk9gbqAfulrECqAf-nrECqAevvrECqAeaBqgH89EbqAeW2BuoB6qbsQKoB4OtsQKoB-C9sQKoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCCQIgGEQARhdMgKKAjoJgECAwICAgKAoSL39wTpY4avRo6jghQOxCW_k4EvBmMH_gAoDigrHA2h0dHBzOi8vd3d3LnRyYWNrZWFtZS5jb20vc2VtLXRyYWNrZXItd2ViL3RyYWNrP2t3PSZjPTY5NjU1NDA2MzQ5OCZtdD0mY2x0X2NjPUNMJm49ZCZwPXd3dy5sYWN1YXJ0YS5jb20mYXA9JmQ9YyZkbT0mdGFyZ2V0aWQ9JmFjY291bnRpZD1odHRwczovL3d3dy52aWFqZXNmYWxhYmVsbGEuY2wvMngmY2FtcGFpZ25pZD0yMTE4NDU1NTEwNiZhZGdyb3VwaWQ9MTY0MDU0NTI5MzE0JkV4cGVyaW1lbnRJZD0mbG9jYXRpb25pZD0xMDAzMzI1JmtleT1KVTJCR0UwRlYxVUtNQ0dJVVRBRUs4TlNBOCZjbHRfZHNuPURTUCZjbHRfY3Q9Qk5EJmNsdF9ucD1BRFcmcHI9RyZjbHRfZm10PUJBTk5FUlMmdT17bHB1cmx9JnV0bV9tZWRpdW09ZGlzcGxheSZ1dG1fY29udGVudD02OTY1NTQwNjM0OTgmdXRtX2NhbXBhaWduPUFEV182OTY1NTQwNjM0OThfQk5EXzQmdXRtX3Rlcm09RlBNX0NMX0JORF9HXzJYLUFCUklMmAsByAsB4AsBgAwBqg0CQ0zIDQHYEwOIFAHQFQH4FgGAFwGyGAkSAqpPGC4iAQA&ae=1&gclid=EAIaIQobChMIy5fVo6jghQMVFZ86BR1pbQ04EAEYASAAEgKBNfD_BwE&num=1&cid=CAQSGwB7FLtqpPg8sbSNKe4Sn8CJdNolvxz3hq7hERgB&sig=AOD64_0IelWmbN0-ocV8RzNhmBWvif4Evw&client=ca-pub-2915053785761950&rf=1&nb=9&adurl=https://www.viajesfalabella.cl/2x%3Futm_source%3D_ADW_DSP_%26gclid%3DEAIaIQobChMIy5fVo6jghQMVFZ86BR1pbQ04EAEYASAAEgKBNfD_BwE" alt="Imagen de la noticia">
+        <section id="seccion2"></section>
+        <div style="display: flex; justify-content: space-between;">
+            <div> 
+                <h3>Deportes</h3>
+                <br></br>
+                    <article>
+                    <h4 Id="Noticia1.1">Nairo es nuevo líder del Tour de Romandía</h4>
+                    <p Id="Cuerpo1.1"><h5>El colombiano Nairo Quintana sustituyó al español Jon Izagirre, compañero suyo en el equipo Movistar, al frente de la general de la Vuelta a Romandía, tras ser declarado ganador de la segunda etapa por esprint irregular del ruso Ilnur Zakarin (Katusha), campeón de la carrera suiza en 2015.</h5></p>
+                    <img Id="Img1.1" src="https://elnoti.com/wp-content/uploads/2017/01/mallorca444-1900x1055_c.jpg" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.ejemplo.com">este enlace</a>.</p>
+                    </article>
+            </div>
+            <div>   
+                <article>
+                    <h4>Nuevos deportes para los Juegos Olímpicos del 2024</h4>
+                    <p><h5>Nuevos deportes se incorporan para los juegos olimpicos del presente año, organizados por Francia. Las nuevas diciplinan serían e,surf, la escalada, el skateboard y el breakdance, dejando de lado deportes como el karate, el beisbol y el softbol.</h5></p>
+                    <img src="https://c.wallhere.com/photos/6f/97/girls_break_dance_dance_movement_style-665527.jpg!d" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.elperiodico.com/es/deportes/20190221/nuevos-deportes-juegos-olimpicos-2024-7316361">este enlace</a>.</p>
+                    <source src="video1.mp4" type="video/mp4">
+                    </video>
+                </article>
+            </div>
+            <div id="info">Adios</div>
+            <script type="text/javaScript">
+                //document.getElementById("info").innerHTML="Hola Mundo";
+                
+            </script>
+            <div>
+                <article>
+                    <h4>Experta en saques de banda impresionantes</h4>
+                    <p><h5>Megan Campbell no es ninguna novata. Alcanzada ya la treintena, la jugadora irlandesa es ejemplo de veteranía dentro del mundo del fútbol femenino, aunque, en los últimos tiempos, se ha hecho especialmente famosa por sus potentes saques de banda.</h5></p>
+                    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1ni12a.img?w=800&h=435&q=60&m=2&f=jpg" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.ejemplo.com">este enlace</a>.</p>
+                    </video>
+                </article>
+            </div>
+        </div>
+            <br></br>
+        </section>        
+        <section id="seccion3"></section>
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <h3>Negocios</h3>
+                <br></br>
+                    <article>
+                        <h4>Emprendimiento: Un viaje colmado de oportunidades y desafíos</h4>
+                        <p><h5>El emprendimiento no se trata únicamente de constituir empresas, se trata también de desafiar el status quo, de encontrar soluciones audaces a problemas significativos (y también cotidianos) que enfrentamos de manera individual las personas o de manera agregada, como sociedad. Es un viaje emocionante, lleno de altibajos, pero con el potencial de transformar vidas y comunidades enteras. Su contribución al empleo, por ejemplo, resulta realmente significativa, según el Instituto Nacional de Estadística e Informática (INEI), en el Perú, las micro y pequeñas empresas generan aproximadamente el 60% del empleo a nivel nacional.</h5></p>
+                        <img src="https://www.toptut.com/wp-content/uploads/2016/11/SEO-Professional-1-1-1.jpg" alt="Imagen de la noticia">
+                        <p>Para más detalles, visita <a href="https://www.infobae.com/peru/2024/04/18/emprendimiento-un-viaje-colmado-de-oportunidades-y-desafios/">este enlace</a>.</p>
+                    </article>
+            </div>
+            <div>
+                <article>
+                    <h4>Transformando los negocios con Inteligencia Artificial</h4>
+                    <p><h5>La apertura de un espacio pionero en Chile para reúnir a líderes empresariales para explorar el impacto de la IA en la transformación de los negocios. Ése es el objetivo de SAP House Chile, evento que marca un hito al presentar las últimas innovaciones y tendencias en inteligencia artificial (IA), sostenibilidad y gestión empresarial y que se desarrolla hasta el 19 de abril en Santiago, destacando avances actuales y futuros en tecnología empresarial.</h5></h5></p>
+                    <img src="https://nwzimg.wezhan.cn/contents/sitefiles2021/10105408/images/12082190.jpg" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.elmostrador.cl/agenda-pais/agenda-digital/2024/04/19/transformando-los-negocios-con-inteligencia-artificial/">este enlace</a>.</p>
+                    <source src="video1.mp4" type="video/mp4">
+                    </video>
+                </article>
+            </div>
+            <div>
+                <article>
+                    <h4>Cómo los gigantes tecnológicos toman atajos para obtener datos para la IA</h4>
+                    <p><h5>OpenAI, Google y Meta ignoraron las políticas corporativas, alteraron sus propias normas y debatieron la posibilidad de eludir la ley de derechos de autor en la búsqueda de información en línea para entrenar sus sistemas de inteligencia artificial más recientes. Investigadores de la oficina de OpenAI en San Francisco desarrollaron una herramienta para transcribir videos de YouTube con el fin de acumular texto conversacional para el desarrollo de IA.</h5></p>
+                    <img src="https://i0.wp.com/criptotendencia.com/wp-content/uploads/2019/05/Facebook-Inteligencia-Artificial.jpg?fit=1000%2C486&ssl=1" alt="Imagen de la noticia">
+                    <p>Para más detalles, visita <a href="https://www.nytimes.com/es/2024/04/14/espanol/openai-google-meta-ia-datos.html">este enlace</a>.</p>
+                    </video>
+                </article>
+            </div>
+        </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2024 Mi Periódico Nacional</p>        
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
 
